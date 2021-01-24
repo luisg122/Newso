@@ -1,0 +1,325 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+main{
+    background: linear-gradient(to right top, #f3eff9, #ebd8dc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.glass{
+    background: white;
+    min-height: 95vh;
+    width: 90%;
+    background: linear-gradient(
+        to right bottom, 
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.3)
+    );
+
+    border-radius: 15px;
+    z-index: 2;
+    backdrop-filter: blur(2rem);
+    display: flex;
+}
+
+.dashboard{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    background: linear-gradient(
+        to right bottom, 
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.3)
+    );
+    border-radius: 15px 0 0 15px;
+}
+
+.historyText{
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.historyText > .fa-history{
+    margin-right: 1rem;
+}
+
+.header{
+    color: lightcoral;
+    font-size: 25px;
+}
+
+.lastLinks{
+    display: flexbox;
+    padding: 1rem 3rem;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    max-height: 500px;
+    scroll-behavior: smooth;
+}
+
+.lastLinks::-webkit-scrollbar-track
+{
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.lastLinks::-webkit-scrollbar
+{
+    width: 8px;
+    border-radius: 25px;
+    background-color: #F5F5F5;
+}
+
+.lastLinks::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: lightsalmon;
+}
+
+.link{
+    display: flex;
+    padding: 0rem 2rem;
+    align-items:center;
+    justify-content: space-evenly;
+    width: 50vh;
+}
+
+.link > p{
+    background-color: khaki;
+    font-display: initial;
+    font-size: 12px;
+    margin-top: 15px;
+    font-weight: normal;
+    color: darkgray;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 5px;
+    border-radius: 5px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+}
+
+.clearButton > form{
+    position: relative;
+    height: 40px;
+    width:60%;
+}
+
+#buttonStyle {
+    background-color: lightcoral;
+    outline: none;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 9px 55px;
+    border: 8px solid #eeeeee;
+    border-radius: 80px;
+    border-style: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin:1rem 0rem;
+    color: white;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 
+            5px 5px 10px rgba(70, 70, 70, 0.12);
+    position: relative;
+    display: inline-block;
+
+}
+
+#buttonStyle:active {
+    box-shadow: 
+    -5px -5px 10px rgba(255, 255, 255, 0.5), 
+    5px 5px 10px rgba(70, 70, 70, 0.12),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.5),
+    inset 5px 5px 10px rgba(70, 70, 70, 0.12);
+    border: none;
+
+}
+
+.newsSummarized{
+    flex:2;
+}
+
+.header2, .header3{
+    color: lightcoral;
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+.searchBar > form{
+    position: relative;
+    display: flex;
+    min-width: 100px;
+    margin: 3rem;
+}
+
+.submit{
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: lightcoral;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;;
+}
+
+.submit:hover {
+    background: rgb(175, 102, 102);
+    border: none;
+  }
+
+.search{
+    border: 1px solid grey;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height:50px;
+    width:80%;
+    padding: 2px 23px 2px 30px;
+    outline: 0;
+    background: linear-gradient(
+        to right bottom, 
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.5)
+    );
+}
+
+.serach:hover, .search:focus{
+    border:1.5px solid lightcoral;
+    background-color: white;
+}
+
+.summarizedTextSection .card{
+    display: relative;
+    background: linear-gradient(
+        to right bottom, 
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.5)
+    );
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 2rem;
+    width: inherit;
+    height: 50vh;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.card .header2{
+    padding-top: 15px;
+    padding-left: 25px;
+}
+
+.card .urlSection{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top:10px;
+    margin-bottom: 10px;
+    width: inherit;
+}
+
+.urlSection .urlHeader{
+    padding-left: 25px;
+    margin-right: 0rem;
+    color: darkgray;
+    position:relative;
+}
+
+.urlHeader > p{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    min-width: 25vh;
+    max-width: 50vh;
+}
+
+.hyperlink{
+    font-size: 12px;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: break-word;
+    color: rgb(85, 131, 216);
+    position: relative;
+    text-decoration: none;
+}
+
+.card > p{
+    font-weight: normal;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    margin-top: 40px;
+    padding-left: 25px;
+    padding-right: 25px;
+    word-spacing: 0.3rem;
+    line-height:30px;
+}
+
+.trustworthyRate .card2 {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(
+        to right bottom, 
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.5)
+    );
+    align-items:center;
+    justify-content: center;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    border-radius: 10px;
+}
+
+.card2 > .header3 {
+    padding-top: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.card2 > p {
+    font-weight: normal;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    padding: 15px;
+}
+
+.card::-webkit-scrollbar-track
+{
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.card::-webkit-scrollbar
+{
+    width: 8px;
+    border-radius: 25px;
+    background-color: #F5F5F5;
+}
+
+.card::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: lightsalmon;
+}

@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: pycorenlp
+Version: 0.3.0
+Summary: Python wrapper for Stanford CoreNLP
+Home-page: https://github.com/smilli/py-corenlp
+Author: Smitha Milli
+Author-email: smitha.milli@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/smilli/py-corenlp/tarball/0.3
+Description: UNKNOWN
+Keywords: nlp
+Platform: UNKNOWN

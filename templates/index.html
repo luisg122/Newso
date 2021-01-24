@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>newso</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="https://use.fontawesome.com/b3c48f42dc.js"></script>
+    </head>
+
+    <body>
+        <main>
+            <section class="glass">
+                <div class="dashboard">
+                    <div class="header">
+                        <h3>Newso</h3> 
+                    </div>
+
+                    <div class="historyText">
+                        <i class="fa fa-history" aria-hidden="true"></i>
+                        <p>Recent History</p>
+                    </div>
+                    
+                    <div class="lastLinks">
+                        {% for url in urls %}
+                        <div class="link">
+                            <p>{{url}}</p>
+                        </div>
+                        {% endfor %}
+                        
+                    </div>
+                    
+                    <div class="clearButton">
+                        <form method="POST" action="/clear_urls">
+                            <button id="buttonStyle" type="submit">clear</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="newsSummarized">
+
+                    <div class="searchBar">    
+                        <form method="POST" action="/analyze_url">                    
+                            <input class="search"    placeholder="Paste a link to a news article" type="text" name="raw_url" required="true" autocomplete="off">
+                            <button class="submit"   type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+
+                    <div class="summarizedTextSection">
+                        <div class="card">
+                            <div class="header2">
+                                <h3>Summarized Text</h3>
+                            </div>
+                            <div class="urlSection">
+                                <div class="urlHeader">
+                                    <p>URL: <a class="hyperlink" href="{{ raw_url }}" target="_blank" rel="noopener noreferrer">{{ raw_url }}</a></p>
+                                </div>
+                            </div>
+
+                            <p>{{ final_summary }}</p>
+                        </div>
+                    </div>
+
+                    <div class="trustworthyRate">
+                        <div class="card2">
+                            <div class="header3">
+                                <h3>Reliable Source Verdict</h3>
+                            </div>
+                            <p>{{ reliable_source }}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+        </main>
+
+
+    </body>
+</html>
