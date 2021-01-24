@@ -5,8 +5,7 @@ nltk.download('punkt')
 nltk.download('stopwords')
 import numpy
 import requests
-from boilerpipe.extract import Extractor
-
+from boilerpy3 import extractors
 import pickle
 import newspaper
 from newspaper import Article
@@ -81,13 +80,13 @@ def summarize(url=None, html=None, n=100, cluster_threshold=5, top_sentences=10)
     
     # End - nested helper function
     
-    extractor = Extractor(extractor='ArticleExtractor', url=url, html=html)
+    extractor = extractors.ArticleExtractor()
 
     # It's entirely possible that this "clean page" will be a big mess. YMMV.
     # The good news is that the summarize algorithm inherently accounts for handling
     # a lot of this noise.
 
-    txt = extractor.getText()
+    txt = extractor.get_content_from_url(url)
     
     sentences = [s for s in nltk.tokenize.sent_tokenize(str(txt))]
     normalized_sentences = [s.lower() for s in sentences]
