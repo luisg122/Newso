@@ -1,13 +1,10 @@
 from flask import Flask, render_template, request
 from text_summarizer import summarize_nltk_text
 from text_summarizer import fake_news_or_not
-import spacy
 import os
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
-
-nlp = spacy.load('en')
 app = Flask(__name__)
 app.static_folder = 'static'
 
