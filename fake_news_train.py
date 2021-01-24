@@ -28,4 +28,4 @@ pred = pipeline.predict(X_test)
 
 #Serialising the file
 with open('model.pkl', 'wb') as handle:
-    pickle.dump(pipeline, handle, protocol=pickle.HIGHEST_PROTOCOL)
+    pickle.dump(pipeline, handle)
